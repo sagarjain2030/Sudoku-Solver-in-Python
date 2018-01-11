@@ -96,9 +96,14 @@ def only_choice(values):
     -----
     You should be able to complete this function by copying your code from the classroom
     """
-    # TODO: Copy your code from the classroom to complete this function
-    raise NotImplementedError
+    digits = '123456789'
+    for unit in unitlist:
+        for digit in digits:
+            dplaces = [box for box in unit if digit in values[box]]
+            if (len(dplaces) == 1):
+                values[dplaces[0]] = digit
 
+    return values
 
 def reduce_puzzle(values):
     """Reduce a Sudoku puzzle by repeatedly applying all constraint strategies
