@@ -4,3 +4,8 @@ __pycache__
 
 sudoku-[0-9]*.zip
 sudoku-result-[0-9]*.json
+misc.xml
+modules.xml
+*.iml
+vcs.xml
+.gitignore
