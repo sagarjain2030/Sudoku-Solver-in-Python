@@ -4,6 +4,8 @@
 
 In this project, students will extend the Sudoku-solving agent developed in the classroom lectures to solve _diagonal_ Sudoku puzzles. A diagonal Sudoku puzzle is identical to traditional Sudoku puzzles with the added constraint that the boxes on the two main diagonals of the board must also contain the digits 1-9 in each cell (just like the rows, columns, and 3x3 blocks).
 
+#### WORK REQUIRED FOR THIS PROJECT IS COMPLETED
+
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
 A: In naked twin problem,2 boxes of same peers can have same 2 numbers as possibilities.So it means that no other box in same peers, other than these 2 would be having same value.Thus from the list of possiblities for boxes we can safely delete these values from boxes of that peeer.This constraint will help to reduce number of possibilities for particular box, thus leading to the solution.
