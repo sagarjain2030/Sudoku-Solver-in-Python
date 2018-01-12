@@ -41,9 +41,22 @@ def naked_twins(values):
     and because it is simpler (since the reduce_puzzle function already calls this
     strategy repeatedly).
     """
-    # TODO: Implement this function!
-    raise NotImplementedError
+    for unit in unitlist:
+        TwinsPossibility = {}
 
+        #List of all upossible boxes if contains pair of digits
+        for pair in cross(cols, cols):
+            TwinsPossibility[pair] = [box for box in unit if values[box] == pair]
+
+        #for each box in unit deleting those values which are in pair
+        for i,j in TwinsPossibility.items():
+            if(len(j) == 2):
+                for box in unit:
+                    if(box not in j):
+                        values =  assign_value(values,box,values[box].replace(i[0],''))
+                        values = assign_value(values,box, values[box].replace(i[1], ''))
+
+    return values
 
 def eliminate(values):
     """Apply the eliminate strategy to a Sudoku puzzle
