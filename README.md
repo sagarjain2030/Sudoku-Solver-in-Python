@@ -4,6 +4,14 @@
 
 In this project, students will extend the Sudoku-solving agent developed in the classroom lectures to solve _diagonal_ Sudoku puzzles. A diagonal Sudoku puzzle is identical to traditional Sudoku puzzles with the added constraint that the boxes on the two main diagonals of the board must also contain the digits 1-9 in each cell (just like the rows, columns, and 3x3 blocks).
 
+# Question 1 (Naked Twins)
+Q: How do we use constraint propagation to solve the naked twins problem?  
+A: In naked twin problem,2 boxes of same peers can have same 2 numbers as possibilities.So it means that no other box in same peers, other than these 2 would be having same value.Thus from the list of possiblities for boxes we can safely delete these values from boxes of that peeer.This constraint will help to reduce number of possibilities for particular box, thus leading to the solution.
+
+# Question 2 (Diagonal Sudoku)
+Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
+A: In diagonal sudoku,constrint is added that the peers of a box which belongs to diagonal in sudoku, would include diagonal boxes as well.This constaint can be included by adding all the diagonal boxes as peers for the box in the diagonal.
+
 ## Instructions
 
 Follow the instructions in the classroom lesson to install and configure the AIND [Anaconda](https://www.continuum.io/downloads) environment. That environment includes several important packages that are used for the project. 
