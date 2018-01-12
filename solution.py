@@ -7,12 +7,16 @@ column_units = [cross(rows, c) for c in cols]
 square_units = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
 unitlist = row_units + column_units + square_units
 
-# TODO: Update the unit list to add the new diagonal units
-unitlist = unitlist
-
+cols_rev = '987654321'
 units = dict((s, [u for u in unitlist if s in u]) for s in boxes)
 peers = dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
 
+firstDiag = [[rows[i]+cols[i] for i in range(len(rows))]]
+secondDiag = [[rows[i]+cols_rev[i] for i in range(len(rows))]]
+
+diagSudoku = 1 # Set this flag = 0 for non-diagonal sudoku
+if diagSudoku == 1:
+    unitlist = row_units + column_units + square_units + firstDiag + secondDiag
 
 def naked_twins(values):
     """Eliminate values using the naked twins strategy.
